@@ -15,7 +15,7 @@ const verifyToken = process.env.vibecode;
 app.get('/', (req, res) => {
   const { 'hub.mode': mode, 'hub.challenge': challenge, 'hub.verify_token': token } = req.query;
 
-  if (mode === 'subscribe' && token === verifyToken) {
+  if (mode === 'subscribe' && token === vibehook) {
     console.log('WEBHOOK VERIFIED');
     res.status(200).send(challenge);
   } else {
